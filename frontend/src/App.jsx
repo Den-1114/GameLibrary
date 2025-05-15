@@ -4,13 +4,14 @@ import Home from './Home'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Upload from './Upload'
 
 function App() {
   return (
     <>
       <Routes>
         <Route path='/' element={<Home />}/>
-        {/* s<Route path='/upload' element={}/> */}
+        <Route path='/upload' element={<Upload />}/>
       </Routes>
     </>
   )
