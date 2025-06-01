@@ -140,3 +140,61 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #0056b3;
 }
+
+
+.game-card-detailed {
+  background-color: rgba(38, 38, 38, 0.95);
+  padding: 32px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 700px;
+}
+
+
+.game-title {
+  font-size: 2.4rem;
+  color: #8d8c8c;
+  margin-bottom: 16px;
+}
+
+.game-cover {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.game-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: #dddddd;
+}
+
+.game-detail {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #b1b1b1;
+}
+
+.game-price {
+  font-size: 1.5rem;
+  color: #4d4e4e;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: right;
+}
+
+.loading {
+  color: #888;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.game-thingy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

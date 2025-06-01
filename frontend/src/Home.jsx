@@ -1,3 +1,7 @@
+import axios from "axios";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+
 function Game({ img_src, name, price }) {
   return (
     <div className="game">
@@ -11,177 +15,32 @@ function Game({ img_src, name, price }) {
 }
 
 function Home() {
+  const [games, setGames] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/")
+      .then((response) => (setGames(response.data)));
+  }, []);
+
+
   return (
     <>
       <h1>GAMES LIBRARY</h1>
       <hr></hr>
       <div className="lib">
-        <Game
-          img_src="https://images.gog-statics.com/cb36244ce87f2f7039cff892b54c54a733f2cdbd6404b73ecd8211e067d968d4_product_tile_extended_432x243.webp"
-          name="mm"
-          price="69$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/90a13d2a30fdd3b3da2ccd06a592ba4eb6c25e8bf7d6121eb88b6b6460ae4058_product_tile_extended_432x243.webp"
-          name="ds"
-          price="2698$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/6170378108ebc443e2d5befd470d000c70552b0941144df9c0107ac204acb4ac_product_tile_extended_432x243.webp"
-          name="fdf"
-          price="1234$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/cb36244ce87f2f7039cff892b54c54a733f2cdbd6404b73ecd8211e067d968d4_product_tile_extended_432x243.webp"
-          name="mm"
-          price="69$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/90a13d2a30fdd3b3da2ccd06a592ba4eb6c25e8bf7d6121eb88b6b6460ae4058_product_tile_extended_432x243.webp"
-          name="ds"
-          price="2698$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/6170378108ebc443e2d5befd470d000c70552b0941144df9c0107ac204acb4ac_product_tile_extended_432x243.webp"
-          name="fdf"
-          price="1234$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/cb36244ce87f2f7039cff892b54c54a733f2cdbd6404b73ecd8211e067d968d4_product_tile_extended_432x243.webp"
-          name="mm"
-          price="69$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/90a13d2a30fdd3b3da2ccd06a592ba4eb6c25e8bf7d6121eb88b6b6460ae4058_product_tile_extended_432x243.webp"
-          name="ds"
-          price="2698$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/6170378108ebc443e2d5befd470d000c70552b0941144df9c0107ac204acb4ac_product_tile_extended_432x243.webp"
-          name="fdf"
-          price="1234$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/cb36244ce87f2f7039cff892b54c54a733f2cdbd6404b73ecd8211e067d968d4_product_tile_extended_432x243.webp"
-          name="mm"
-          price="69$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/90a13d2a30fdd3b3da2ccd06a592ba4eb6c25e8bf7d6121eb88b6b6460ae4058_product_tile_extended_432x243.webp"
-          name="ds"
-          price="2698$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/6170378108ebc443e2d5befd470d000c70552b0941144df9c0107ac204acb4ac_product_tile_extended_432x243.webp"
-          name="fdf"
-          price="1234$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/cb36244ce87f2f7039cff892b54c54a733f2cdbd6404b73ecd8211e067d968d4_product_tile_extended_432x243.webp"
-          name="mm"
-          price="69$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/90a13d2a30fdd3b3da2ccd06a592ba4eb6c25e8bf7d6121eb88b6b6460ae4058_product_tile_extended_432x243.webp"
-          name="ds"
-          price="2698$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/6170378108ebc443e2d5befd470d000c70552b0941144df9c0107ac204acb4ac_product_tile_extended_432x243.webp"
-          name="fdf"
-          price="1234$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/cb36244ce87f2f7039cff892b54c54a733f2cdbd6404b73ecd8211e067d968d4_product_tile_extended_432x243.webp"
-          name="mm"
-          price="69$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/90a13d2a30fdd3b3da2ccd06a592ba4eb6c25e8bf7d6121eb88b6b6460ae4058_product_tile_extended_432x243.webp"
-          name="ds"
-          price="2698$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/6170378108ebc443e2d5befd470d000c70552b0941144df9c0107ac204acb4ac_product_tile_extended_432x243.webp"
-          name="fdf"
-          price="1234$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/cb36244ce87f2f7039cff892b54c54a733f2cdbd6404b73ecd8211e067d968d4_product_tile_extended_432x243.webp"
-          name="mm"
-          price="69$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/90a13d2a30fdd3b3da2ccd06a592ba4eb6c25e8bf7d6121eb88b6b6460ae4058_product_tile_extended_432x243.webp"
-          name="ds"
-          price="2698$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/6170378108ebc443e2d5befd470d000c70552b0941144df9c0107ac204acb4ac_product_tile_extended_432x243.webp"
-          name="fdf"
-          price="1234$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/cb36244ce87f2f7039cff892b54c54a733f2cdbd6404b73ecd8211e067d968d4_product_tile_extended_432x243.webp"
-          name="mm"
-          price="69$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/90a13d2a30fdd3b3da2ccd06a592ba4eb6c25e8bf7d6121eb88b6b6460ae4058_product_tile_extended_432x243.webp"
-          name="ds"
-          price="2698$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/6170378108ebc443e2d5befd470d000c70552b0941144df9c0107ac204acb4ac_product_tile_extended_432x243.webp"
-          name="fdf"
-          price="1234$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/cb36244ce87f2f7039cff892b54c54a733f2cdbd6404b73ecd8211e067d968d4_product_tile_extended_432x243.webp"
-          name="mm"
-          price="69$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/90a13d2a30fdd3b3da2ccd06a592ba4eb6c25e8bf7d6121eb88b6b6460ae4058_product_tile_extended_432x243.webp"
-          name="ds"
-          price="2698$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/6170378108ebc443e2d5befd470d000c70552b0941144df9c0107ac204acb4ac_product_tile_extended_432x243.webp"
-          name="fdf"
-          price="1234$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/cb36244ce87f2f7039cff892b54c54a733f2cdbd6404b73ecd8211e067d968d4_product_tile_extended_432x243.webp"
-          name="mm"
-          price="69$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/90a13d2a30fdd3b3da2ccd06a592ba4eb6c25e8bf7d6121eb88b6b6460ae4058_product_tile_extended_432x243.webp"
-          name="ds"
-          price="2698$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/6170378108ebc443e2d5befd470d000c70552b0941144df9c0107ac204acb4ac_product_tile_extended_432x243.webp"
-          name="fdf"
-          price="1234$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/cb36244ce87f2f7039cff892b54c54a733f2cdbd6404b73ecd8211e067d968d4_product_tile_extended_432x243.webp"
-          name="mm"
-          price="69$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/90a13d2a30fdd3b3da2ccd06a592ba4eb6c25e8bf7d6121eb88b6b6460ae4058_product_tile_extended_432x243.webp"
-          name="ds"
-          price="2698$"
-        />
-        <Game
-          img_src="https://images.gog-statics.com/6170378108ebc443e2d5befd470d000c70552b0941144df9c0107ac204acb4ac_product_tile_extended_432x243.webp"
-          name="fdf"
-          price="1234$"
-        />
+        {games.map((game) => (
+          <Link to={`/game/${game._id}`}>
+            <Game
+              key={game._id}
+              img_src={game.photo}
+              name={game.title}
+              price={game.price + "$"}
+            />
+          </Link>
+        ))}
       </div>
+      <a href="http://localhost:5173/upload">Upload game</a>
     </>
   );
 }

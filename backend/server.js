@@ -3,8 +3,10 @@ import http from "http";
 import mongoose from "mongoose";
 import Game from "./model.js";
 import multer from "multer";
+import cors from "cors"
 
 const app = express();
+
 
 const dbPassword = "CiO9pmHt4YK0VjS8"
 const dbUsername = "denizkaya201215"
@@ -20,10 +22,19 @@ mongoose.connect(uri, {
 
 
 app.use(express.static("public"));
+app.use(cors());
+app.use(express.json());
+
 
 app.get("/", async (req, res) => {
     const games = await Game.find({})
-    res.json({"games": games})
+    res.json(games)
+})
+
+app.get("/info/:id", async (req, res) => {
+    const gameId = req.params.id;
+    const game = await Game.find({_id: gameId})
+    res.json(game)
 })
 
 app.post("/upload", multer().none(), (req, res) => {
@@ -34,7 +45,13 @@ app.post("/upload", multer().none(), (req, res) => {
     const price = req.body.price
     const photo = req.body.photo
     
+    console.log(title)
+    console.log(description)
+    console.log(genre)
+    console.log(platform)
+    console.log(price)
     console.log(photo)
+
 
     new Game({
         title: title,
@@ -45,7 +62,6 @@ app.post("/upload", multer().none(), (req, res) => {
         photo: photo,
     }).save()
 
-    res.redirect("/")
 })
 
 const server = http.createServer(app);
